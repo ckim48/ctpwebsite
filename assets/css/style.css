@@ -1329,7 +1329,7 @@ section {
 
 .projects-section {
   padding: 20px 0;
-  background-color: #f9f9f9;
+/*  background-color: #f9f9f9;*/
 }
 
 .project-grid {
@@ -1381,23 +1381,26 @@ section {
   margin-bottom: 20px;
 }
 
+.filter-btn.active {
+    background-color: #C41230; /* Red background for the active button */
+    color: white; /* White text color for better contrast */
+    border: none; /* Optional: remove border if present */
+}
+
 .filter-btn {
-  background-color: #6D6E71;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: #f4f4f4; /* Default background */
+    color: black; /* Default text color */
+    padding: 10px 20px; /* Padding for button size */
+    margin: 0 5px; /* Space between buttons */
+    border: 1px solid #ccc; /* Subtle border */
+    cursor: pointer; /* Cursor indicates clickable */
+    outline: none; /* Remove outline on focus */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color and bg */
 }
 
 .filter-btn:hover {
-  background-color: #C41230;
-}
-
-.filter-btn:focus {
-  outline: none; 
+    background-color: #C41230; /* Red background on hover */
+    color: white; /* White text on hover */
 }
 
 
@@ -1413,3 +1416,6 @@ section {
   }
 }
 
+
+
+}

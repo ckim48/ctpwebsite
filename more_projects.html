@@ -54,7 +54,7 @@
       <div class="container mt-5">
         <!-- Navigation for filtering projects by year -->
         <div class="project-filters">
-          <button class="filter-btn" onclick="filterProjects('2024')">2024</button>
+          <button class="filter-btn active" onclick="filterProjects('2024')">2024</button>
           <button class="filter-btn" onclick="filterProjects('2023')">2023</button>
         </div>
 
@@ -92,7 +92,7 @@
           </div>
 
 
-                              <div class="mt-md-5 col-lg-4 col-md-6 project-item filter-2024">
+                              <div class="col-lg-4 col-md-6 project-item filter-2024">
             <div class="project-content">
               <a href="project-detail.html">
                 <img src="assets/img/cta.jpg" alt="Project Title" class="img-fluid">
@@ -102,7 +102,7 @@
             </div>
           </div>
 
-                              <div class="mt-md-5 col-lg-4 col-md-6 project-item filter-2024">
+                              <div class="col-lg-4 col-md-6 project-item filter-2024">
             <div class="project-content">
               <a href="project-detail.html">
                 <img src="assets/img/cta.jpg" alt="Project Title" class="img-fluid">
@@ -113,7 +113,7 @@
           </div>
 
 
-                                        <div class="mt-md-5 col-lg-4 col-md-6 project-item filter-2023">
+                                        <div class="col-lg-4 col-md-6 project-item filter-2023">
             <div class="project-content">
               <a href="project-detail.html">
                 <img src="assets/img/cta.jpg" alt="Project Title" class="img-fluid">
@@ -123,7 +123,7 @@
             </div>
           </div>
 
-                                        <div class="mt-md-5 col-lg-4 col-md-6 project-item filter-2023">
+                                        <div class="col-lg-4 col-md-6 project-item filter-2023">
             <div class="project-content">
               <a href="project-detail.html">
                 <img src="assets/img/cta.jpg" alt="Project Title" class="img-fluid">
@@ -133,7 +133,7 @@
             </div>
           </div>
 
-                                        <div class="mt-md-5 col-lg-4 col-md-6 project-item filter-2023">
+                                        <div class="col-lg-4 col-md-6 project-item filter-2023">
             <div class="project-content">
               <a href="project-detail.html">
                 <img src="assets/img/cta.jpg" alt="Project Title" class="img-fluid">
@@ -151,7 +151,7 @@
   </main>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" class="mt-5">
 
 
 
@@ -173,22 +173,45 @@
   <script src="https://cdn.jsdelivr.net/npm/isotope-layout/dist/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
   <script>
-    filterProjects('2024');
-    function filterProjects(year) {
-  var i, tabcontent;
-  tabcontent = document.getElementsByClassName("project-item");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  var selectedProjects = document.getElementsByClassName("filter-" + year);
-  for (i = 0; i < selectedProjects.length; i++) {
-    selectedProjects[i].style.display = "block";
-  }
+        tabcontent = document.getElementsByClassName("project-item");
+    tablinks = document.getElementsByClassName("filter-btn");
+    
+    // Hide all elements
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+        var selectedProjects = document.getElementsByClassName("filter-" + 2024);
+    for (i = 0; i < selectedProjects.length; i++) {
+        selectedProjects[i].style.display = "block";
+    }
+function filterProjects(year) {
+    var i, tabcontent, tablinks;
+    console.log("ASD");
+    tabcontent = document.getElementsByClassName("project-item");
+    tablinks = document.getElementsByClassName("filter-btn");
+    
+    // Hide all elements
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    
+    // Remove active class from all buttons
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    // Show the relevant content and add active class to the clicked button
+    var selectedProjects = document.getElementsByClassName("filter-" + year);
+    for (i = 0; i < selectedProjects.length; i++) {
+        selectedProjects[i].style.display = "block";
+    }
+    event.currentTarget.classList.add("active");
 }
+
   </script>
+  <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
