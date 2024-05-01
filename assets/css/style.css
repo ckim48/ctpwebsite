@@ -405,33 +405,65 @@ section {
   padding: 50px 0;
 }
 
-.section-bg {
-  background-color: #f7f8fa;
-}
-
 .section-title {
   text-align: left;
   padding-bottom: 30px;
+  margin-bottom: 50px; /* Additional space below the title for clarity */
 }
 
 .section-title h2 {
-  margin-left:3px;
+  margin-left: 3px;
   font-size: 52px;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 15px;
-  padding-bottom: 2px;
+  margin-bottom: 35px;
   position: relative;
+  color: #333; /* Darker for better readability */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Adding the pseudo-element directly under h2 for the underline */
+.section-title h2::after {
+  content: ''; /* Necessary for display */
+  position: absolute;
+  bottom: -10px; /* Positioning the underline below the text */
+  left: 0;
+  width: 12%; /* Width of the underline, can adjust based on preference */
+  height: 4px; /* Thickness of the underline */
+  background-color: #C41230; /* Use a theme color or a contrasting color */
+  border-radius: 2px; /* Slightly rounded edges */
+}
+
+.section-title p {
+  font-size: 17px;
+  color: #555; /* Lighter grey for better readability */
+  padding: 0 10px;
+  line-height: 1.6; /* Improved line spacing for readability */
 }
 
 
+.section-title2 {
+  text-align: left;
+  padding-bottom: 30px;
+  margin-bottom: 50px; /* Additional space below the title for clarity */
+}
 
-.section-title p {
-  margin-bottom: 0;
+.section-title2 h2 {
+  margin-left: 3px;
+  font-size: 52px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  position: relative;
+  color: #333; /* Darker for better readability */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.section-title2 p {
   font-size: 17px;
-  margin-bottom: 15px;
-  color: black;
-  padding: 0px 10px;
+  color: #555; /* Lighter grey for better readability */
+  padding: 0 10px;
+  line-height: 1.6; /* Improved line spacing for readability */
 }
 
 /*--------------------------------------------------------------
