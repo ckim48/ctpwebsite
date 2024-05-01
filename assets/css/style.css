@@ -77,7 +77,7 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(55, 64, 85, 0.9);
+  background:  #6D6E71;
   padding: 15px 0;
 }
 
@@ -415,12 +415,12 @@ section {
 }
 
 .section-title h2 {
-  margin-left:38px;
-  font-size: 58px;
+  margin-left:3px;
+  font-size: 52px;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 2px;
   position: relative;
 }
 
@@ -428,8 +428,10 @@ section {
 
 .section-title p {
   margin-bottom: 0;
-  font-size: 14px;
-  color: #aab3c7;
+  font-size: 17px;
+  margin-bottom: 15px;
+  color: black;
+  padding: 0px 10px;
 }
 
 /*--------------------------------------------------------------
@@ -635,11 +637,11 @@ section {
 }
 #expertise .additional-info {
     position: absolute;
-    bottom: 0; /* Positioned at the bottom of the card */
+    bottom: 0; 
     left: 0;
-    width: 100%; /* Ensures it stretches across the bottom */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    color: #fff; /* White text color for visibility */
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white; 
     padding: 60px 10px ;
     transform: translateX(-100%);
     opacity: 0;
@@ -876,84 +878,61 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
-.team .member {
-  margin-bottom: 20px;
-  overflow: hidden;
-  text-align: center;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 0px 2px 15px rgba(65, 76, 100, 0.06);
+.member {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden; /* Ensures no overflow from child elements */
 }
 
-.team .member .member-img {
-  position: relative;
-  overflow: hidden;
+.member:hover {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Lift effect on hover */
 }
 
-.team .member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.member-info {
+  padding: 25px;
+  text-align: center; /* Center all texts inside the card */
 }
 
-.team .member .social a {
-  transition: color 0.3s;
-  color: #414c64;
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .member .social a i {
-  line-height: 0;
-}
-
-.team .member .social a:hover {
-  color: #C41230;
-}
-
-.team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-.team .member .member-info {
-  padding: 25px 15px;
-}
-
-.team .member .member-info h4 {
-  font-weight: 700;
+.member-info h4 {
+  font-size: 1.2rem;
+  font-weight: 700; /* Bold font for names */
+  color: #333;
   margin-bottom: 5px;
-  font-size: 18px;
-  color: #414c64;
 }
 
-.team .member .member-info span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: #aaaaaa;
+.member-info span {
+  font-size: 1rem;
+  color: #777; /* Subdued color for position */
+  display: block; /* Ensures it appears on a new line */
 }
 
-.team .member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
-  color: #777777;
+.member-info a {
+  color: #DB3B3B;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.team .member:hover .social {
-  opacity: 1;
+.member-info a:hover {
+  color: #C41230; /* Darken color on hover */
+}
+
+@media (max-width: 992px) {
+  .member {
+    margin-bottom: 30px; /* Space between items on smaller screens */
+  }
+
+  .member-info h4, .member-info span {
+    font-size: smaller; /* Slightly reduce font size on smaller devices */
+  }
+}
+.team-photo{
+  width:60%;
+  border-radius: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -1313,3 +1292,92 @@ section {
   background: #ffce3a;
   text-decoration: none;
 }
+
+
+
+.projects-section {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; 
+  justify-content: center;
+}
+
+.project-item {
+  width: calc(33.333% - 20px); 
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover {
+  transform: translateY(-10px); 
+}
+
+
+.project-content img {
+  width: 100%;
+  height: auto;
+  border-bottom: 5px solid #0056b3; 
+}
+
+.project-content h4 {
+  padding: 15px;
+  margin: 0;
+  font-size: 1.2em;
+  color: #333; 
+}
+
+.project-content p {
+  padding: 0 15px 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.project-content a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+
+.project-filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background-color: #6D6E71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #C41230;
+}
+
+.filter-btn:focus {
+  outline: none; 
+}
+
+
+@media (max-width: 768px) {
+  .project-item {
+    width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    width: 100%; 
+  }
+}
+
