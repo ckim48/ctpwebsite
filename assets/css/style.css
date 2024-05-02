@@ -1425,7 +1425,8 @@ section {
   height: 160px !important;
   color: white;
   text-align: center;
-  line-height: 160px; /* Adjust this value based on your content */
+    align-items: center; /* Aligns content vertically */
+  line-height: 139px; /* Adjust this value based on your content */
   transform: skew(-20deg);
   margin-top: 20px;
     border-radius: 15px; /* Adds rounded corners */
