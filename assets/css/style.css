@@ -402,13 +402,15 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 50px 0;
+  padding: 20px 0;
 }
-
+.mtminus{
+  margin-top: -50px !important;
+}
 .section-title {
   text-align: left;
   padding-bottom: 30px;
-  margin-bottom: 50px; /* Additional space below the title for clarity */
+/*  margin-bottom: 50px; /* Additional space below the title for clarity */*/
 }
 
 .section-title h2 {
@@ -1418,4 +1420,27 @@ section {
 
 
 
+
+.parallelogram {
+  height: 160px !important;
+  color: white;
+  text-align: center;
+  line-height: 160px; /* Adjust this value based on your content */
+  transform: skew(-20deg);
+  margin-top: 20px;
+    border-radius: 15px; /* Adds rounded corners */
+
 }
+
+
+/* Reverse skew for content to keep it horizontal */
+.parallelogram * {
+  display: inline-block;
+  transform: skew(20deg);
+}
+
+
+.color1 { background-color: #C41230; }
+.color2 { background-color: #FFAE00; }
+.color3 { background-color: #22990A; }
+.color4 { background-color: #154998; }
