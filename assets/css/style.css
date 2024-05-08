@@ -82,7 +82,7 @@ h6 {
 }
 
 #header.header-scrolled {
-  background:  #6D6E71;
+  background:  #C41230;
   padding: 15px 0;
 }
 
@@ -135,7 +135,10 @@ h6 {
   color: #fff;
   font-size: 14px;
   white-space: nowrap;
-  transition: 0.3s;
+  transition: color 0.3s; /* Ensure color transition is smooth */
+  position: relative; /* Needed for positioning pseudo-elements */
+  text-decoration: none; /* Removes default underline */
+  overflow: hidden; /* Hides any overflow from the pseudo-element */
 }
 
 .navbar a i,
@@ -145,12 +148,31 @@ h6 {
   margin-left: 5px;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-  color: #C41230;
+.navbar a::after,
+.navbar a:focus::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Initial state with no visible width */
+  height: 2px;
+  background-color: #fff; /* Underline color matching text color */
+  transition: all 0.3s ease; /* Smooth transition for moving and resizing */
+  bottom: 0;
+  left: 50%; /* Starts from the center */
+  transform: translateX(-50%); /* Keeps it centered at all states */
 }
+.navbar a:hover{
+    color:white !important;
+}
+.navbar a:hover::after,
+.navbar .active::after,
+.navbar .active:focus::after,
+.navbar li:hover > a::after {
+
+  width: 56%; /* Full width of the text */
+  left: 42%; /* Align from the left edge */
+  transform: translateX(0%); /* Remove transform to allow full width */
+}
+
 
 .navbar .dropdown ul {
   display: block;
@@ -316,39 +338,56 @@ h6 {
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
-
+.mywidth {
+  background-color: rgba(137, 147, 249, 0.5);
+  width: auto; /* Change from 100% to auto if you don't need it to stretch full width */
+  padding: 40px 50px;
+  margin-left: 0; /* Ensures alignment to the left */
+  box-sizing: border-box; /* Includes padding in the element's total width */
+}
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 80vh;
-  background: url("../img/hero-bg2.jpg") top center;
-  background-size: cover;
+  height: 84vh;
   position: relative;
+  overflow: hidden;
 }
 
+#hero video {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  /* Ensure the video covers the area */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Ensures the video stays in the background */
+}
 #hero:before {
   content: "";
-  background: rgba(45, 53, 69, 0.65);
+  background: rgba(45, 53, 69, 0.75);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
 }
-.hero-div {
-  padding: 50px 50px;
-/*  background-color: rgba(72, 99, 160,0.85); /* Final background color */*/
-  position: relative;
-  overflow: hidden;
+#hero .container {
+  display: block; /* Override flex if necessary */
+    justify-content: flex-start; /* Aligns content to the start */
+
 }
+
 
 .block {
   position: absolute;
   width: 33.33%; /* Adjust size for different effects */
-  height: 100%;
-  background-color: var(--block-color);
+  height: 39%;
+  background-color: rgba(137, 147, 249, 0.5);
   animation: mergeBlocks 1.5s ease forwards;
 }
 .wind-element {
@@ -356,9 +395,8 @@ h6 {
   bottom: -10px; /* Start below the viewable area */
   height: 40px;
   width: 40px;
-  
-  background-color: rgba(190, 38, 31,0.5); /* Or an image of a leaf, paper, etc. */
-  border-radius: 50%; /* Makes the elements circular or use an image */
+  background-color: rgba(230, 200, 245, 0.35); /* Or an image of a leaf, paper, etc. */
+  border-radius: 50%; 
   animation: windEffect 20s linear infinite;
 }
 
@@ -368,7 +406,7 @@ h6 {
     opacity: 0;
   }
   10% {
-    opacity: 1;
+    opacity: 0.7;
   }
   100% {
     transform: translateX(110vw) translateY(-100vh) rotate(720deg); /* Move across and up, rotating */
@@ -635,7 +673,21 @@ section {
   padding: 15px 0;
   text-align: center;
 }
+.clients .row {
+  display: flex;
+  flex-wrap: nowrap;
+/*  animation: scrollLogo 20s linear infinite;*/
+  overflow: hidden; /* Hide anything that goes beyond the container */
+}
 
+@keyframes scrollLogo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move the entire block leftward */
+  }
+}
 .clients img {
   max-width: 45%;
   transition: all 0.4s ease-in-out;

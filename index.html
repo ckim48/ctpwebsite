@@ -52,13 +52,22 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container position-relative hero-div">
+            <video autoplay muted loop id="hero-video">
+      <source src="assets/img/short_video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-div">
+
     <div class="block"></div>
     <div class="block"></div>
     <div class="block"></div>
+    <div class="mywidth">
     <h1 class="mb-5" data-aos="fade-down" data-aos-duration="1000">Center for <span class="color-red">Transformational Play</span> (CTP)</h1>
     <h2 data-aos="fade-up" data-aos-duration="1000">Research center launched by the Carnegie Mellon University School of Computer Science to house the research and development of transformational games.</h2>
-      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> 
+  -->
+</div>
+
     </div>
 
 
@@ -95,6 +104,7 @@
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
             <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
           </div>
+
 
         </div>
 
@@ -474,16 +484,16 @@
   AOS.init();
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const heroDiv = document.querySelector('#hero');
-    for (let i = 0; i < 25; i++) { // Create multiple wind elements
-      let windElement = document.createElement('div');
-      windElement.className = 'wind-element';
-      windElement.style.left = `${Math.random() * 100}vw`; // Random horizontal start position
-      windElement.style.animationDuration = `${15 + Math.random() * 10}s`; // Randomize duration for variability
-      heroDiv.appendChild(windElement);
-    }
-  });
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   const heroDiv = document.querySelector('#hero');
+  //   for (let i = 0; i < 25; i++) { // Create multiple wind elements
+  //     let windElement = document.createElement('div');
+  //     windElement.className = 'wind-element';
+  //     windElement.style.left = `${Math.random() * 100}vw`; // Random horizontal start position
+  //     windElement.style.animationDuration = `${15 + Math.random() * 10}s`; // Randomize duration for variability
+  //     heroDiv.appendChild(windElement);
+  //   }
+  // });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.0/dist/gsap.min.js"></script>
 
