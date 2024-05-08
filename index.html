@@ -8,7 +8,10 @@
   <title>CMU template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -49,11 +52,16 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container position-relative">
-      <h1 class="mb-5" data-aos="fade-in" data-aos-duration="1000">CTP Website</h1>
-      <h2 data-aos="fade-in" data-aos-duration="1000">We are team of ......</h2>
+    <div class="container position-relative hero-div">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <h1 class="mb-5" data-aos="fade-down" data-aos-duration="1000">Center for <span class="color-red">Transformational Play</span> (CTP)</h1>
+    <h2 data-aos="fade-up" data-aos-duration="1000">Research center launched by the Carnegie Mellon University School of Computer Science to house the research and development of transformational games.</h2>
       <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
     </div>
+
+
   </section><!-- End Hero -->
 
   <main id="main">
@@ -465,6 +473,24 @@
 <script>
   AOS.init();
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const heroDiv = document.querySelector('#hero');
+    for (let i = 0; i < 25; i++) { // Create multiple wind elements
+      let windElement = document.createElement('div');
+      windElement.className = 'wind-element';
+      windElement.style.left = `${Math.random() * 100}vw`; // Random horizontal start position
+      windElement.style.animationDuration = `${15 + Math.random() * 10}s`; // Randomize duration for variability
+      heroDiv.appendChild(windElement);
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.9.0/dist/gsap.min.js"></script>
+
+<script>
+
+
+  </script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
