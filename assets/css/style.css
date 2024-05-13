@@ -82,7 +82,7 @@ h6 {
 }
 
 #header.header-scrolled {
-  background:  #C41230;
+  background:  #941120;
   padding: 15px 0;
 }
 
@@ -339,7 +339,7 @@ h6 {
   display: block;
 }
 .mywidth {
-  background-color: rgba(137, 147, 249, 0.5);
+  background-color: rgba(0, 143, 145, 0.5);
   width: auto; /* Change from 100% to auto if you don't need it to stretch full width */
   padding: 40px 50px;
   margin-left: 0; /* Ensures alignment to the left */
@@ -1221,7 +1221,7 @@ section {
   color: #C41230;
   border-radius: 50%;
   padding: 8px;
-  border: 2px dotted #ffeeba;
+  border: 2px dotted #941120;
 }
 
 .contact .info-box h3 {
